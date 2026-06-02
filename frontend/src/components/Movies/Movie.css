@@ -1,0 +1,11 @@
+.movie,
+.movie td,
+.movie th {
+  border-collapse: collapse;
+  border: 1px solid grey;
+}
+
+.movie td,
+.movie th {
+  padding: 10px;
+}
