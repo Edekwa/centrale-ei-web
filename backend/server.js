@@ -32,12 +32,12 @@ const startServer = async () => {
 };
 
 // 1. starts only the server
-// startServer();
+startServer();
 
 // 2. starts the database connection first then starts the server
-appDataSource
-  .initialize()
-  .then(startServer)
-  .catch((err) => {
-    console.error('Error during Data Source initialization:', err);
-  });
+//appDataSource
+//  .initialize()
+//  .then(startServer)
+//  .catch((err) => {
+//    console.error('Error during Data Source initialization:', err);
+//  });
