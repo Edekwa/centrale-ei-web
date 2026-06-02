@@ -1,14 +1,19 @@
 import logo from './logo.svg';
 import './Home.css';
+import { useFetchMovies } from './useFetchMovies';
+import Movie from '../../components/Movie/Movie';
 
 function Home() {
+  const { movies, moviesLoadingError, fetchMovies } = useFetchMovies();
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
+        <Movie movies={movies} />
+        {moviesLoadingError !== null && (
+          <div className="users-loading-error">{moviesLoadingError}</div>
+        )}
         <a
           className="App-link"
           href="https://react.dev"
