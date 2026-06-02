@@ -29,6 +29,7 @@ export function useFetchMovies() {
 
   useEffect(() => {
     fetchMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { movies, moviesLoadingError, fetchMovies };

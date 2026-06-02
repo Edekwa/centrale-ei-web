@@ -4,6 +4,7 @@ import { useFetchMovies } from './useFetchMovies';
 import Movie from '../../components/Movies/Movie.jsx';
 
 function Home() {
+  // eslint-disable-next-line no-unused-vars
   const { movies, moviesLoadingError, fetchMovies } = useFetchMovies();
 
   return (
