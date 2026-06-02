@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './Home.css';
 import { useFetchMovies } from './useFetchMovies';
-import Movie from '../../components/Movie/Movie';
+import Movie from '../../components/Movies/Movie.jsx';
 
 function Home() {
   const { movies, moviesLoadingError, fetchMovies } = useFetchMovies();
