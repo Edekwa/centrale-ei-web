@@ -13,6 +13,11 @@ const Movie = new typeorm.EntitySchema({
       unique: true,
     },
     release_date: { type: String },
+    original_language: { type: String },
+    overview: { type: String },
+    vote_average: { type: Number },
+    poster_path: { type: String },
+    genre_id: { type: 'simple-json' },
   },
 });
 

@@ -18,6 +18,11 @@ router.post('/new', function (req, res) {
   const newMovie = movieRepository.create({
     title: req.body.title,
     release_date: req.body.release_date,
+    original_language: req.body.original_language,
+    overview: req.body.overview,
+    vote_average: req.body.vote_average,
+    poster_path: req.body.poster_path,
+    genre_id: req.body.genre_id,
   });
   movieRepository
     .save(newMovie)
