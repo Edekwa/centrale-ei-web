@@ -1,5 +1,6 @@
 import express from 'express';
 import { appDataSource } from '../datasource.js';
+import Movie from '../entities/movies.js';
 
 const router = express.Router();
 
@@ -13,8 +14,8 @@ router.get('/', function (req, res) {
 });
 
 router.post('/new', function (req, res) {
-  const userRepository = appDataSource.getRepository(Movie);
-  const newMovie = userRepository.create({
+  const movieRepository = appDataSource.getRepository(Movie);
+  const newMovie = movieRepository.create({
     title: req.body.title,
     release_date: req.body.release_date,
   });
