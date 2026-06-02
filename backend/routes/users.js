@@ -46,7 +46,7 @@ router.delete('/:userId', function (req, res) {
     .getRepository(User)
     .delete({ id: req.params.userId })
     .then(function () {
-      res.status(204).json({ message: 'User successfully deleted' });
+      res.status(200).json({ message: 'User successfully deleted' });
     })
     .catch(function () {
       res.status(500).json({ message: 'Error while deleting the user' });

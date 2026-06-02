@@ -63,7 +63,7 @@ router.delete('/:id', function (req, res) {
     .getRepository(Movie)
     .delete({ id: movieId })
     .then(function () {
-      res.status(204).json({ message: 'Movie successfully deleted' });
+      res.status(200).json({ message: 'Movie successfully deleted' });
     })
     .catch(function () {
       res.status(500).json({ message: 'Error while deleting the movie' });
