@@ -38,4 +38,35 @@ router.post('/new', function (req, res) {
       }
     });
 });
+
+router.get('/:id', function (req, res) {
+  const movieId = parseInt(req.params.id);
+  appDataSource
+    .getRepository(Movie)
+    .findOneBy({ id: movieId })
+    .then(function (movie) {
+      if (movie) {
+        res.json({ movie: movie });
+      } else {
+        res.status(404).json({ message: 'Movie not found' });
+      }
+    })
+    .catch(function (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error while retrieving the movie' });
+    });
+});
+
+router.delete('/:id', function (req, res) {
+  const movieId = parseInt(req.params.id);
+  appDataSource
+    .getRepository(Movie)
+    .delete({ id: movieId })
+    .then(function () {
+      res.status(204).json({ message: 'Movie successfully deleted' });
+    })
+    .catch(function () {
+      res.status(500).json({ message: 'Error while deleting the movie' });
+    });
+});
 export default router;
